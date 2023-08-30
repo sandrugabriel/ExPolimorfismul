@@ -95,6 +95,11 @@ namespace View
                 this.cmbTranslatare.SelectedIndex = 0;
             }
             ct++;
+
+
+            if(ct>=2)
+            this.cmbTranslatare.Items.Add("Desenul");
+
         }
 
         private void translate(int X, int Y) 
@@ -251,10 +256,15 @@ namespace View
         {
             string select = cmbTranslatare.SelectedItem.ToString();
 
+            foreach(Figura figura1 in figuri)
+            {
+                figura1.culoare = Color.Black;
+            }
+
             foreach (Figura figura in figuri)
             {
                 if (figura.Nume == select)
-                { 
+                {
                     figuraSelectata = figura;
                     figuraSelectata.culoare = Color.Red;
                     RefreshPictureBox();
@@ -264,6 +274,7 @@ namespace View
                         this.grpTranLinie.Visible = false;
                         this.grpTranCerc.Visible = true;
                         this.grpTranDreptunghi.Visible = false;
+                        this.grpDesen.Visible = false;
 
                     }
                     else if (select.Remove(5) == "linie")
@@ -271,28 +282,96 @@ namespace View
                         this.grpTranCerc.Visible = false;
                         this.grpTranDreptunghi.Visible = false;
                         this.grpTranLinie.Visible = true;
+                        this.grpDesen.Visible = false;
                     }
                     else if (select.Remove(10) == "dreptunghi")
                     {
                         this.grpTranCerc.Visible = false;
                         this.grpTranDreptunghi.Visible = true;
                         this.grpTranLinie.Visible = false;
+                        this.grpDesen.Visible = false;
 
-                    }
 
-                    for (int i = 0; i < figuri.Count; i++)
-                    {
-                        if (figuri[i] != figuraSelectata)
+                        for (int i = 0; i < figuri.Count; i++)
                         {
-                            figuri[i].culoare = Color.Black;
+                            if (figuri[i] != figuraSelectata)
+                            {
+                                figuri[i].culoare = Color.Black;
+                            }
                         }
+                        RefreshPictureBox();
+                        break;
                     }
-                    RefreshPictureBox();
-                    break;
+
                 }
             }
 
+            if (select.Equals("Desenul"))
+            {
+
+                foreach (Figura fig in figuri)
+                {
+                    fig.culoare = Color.Red;
+                    RefreshPictureBox();
+
+                }
+
+
+                this.grpTranCerc.Visible = false;
+                this.grpTranDreptunghi.Visible = false;
+                this.grpTranLinie.Visible = false;
+                this.grpDesen.Visible = true;
+
+            }
+
             RefreshPictureBox();
+        }
+
+        private void btnStergere_Click(object sender, EventArgs e)
+        {
+
+            this.figuri.Clear();
+
+            this.cmbTranslatare.Items.Clear();
+
+            RefreshPictureBox();
+
+            this.grpDesen.Visible = false;
+            this.cmbTranslatare.Visible = false;
+        }
+
+        private void btnTranslatare_Click(Object sender, EventArgs e)
+        {
+
+            foreach (Figura fig in figuri)
+            {
+                figuraSelectata = fig;
+                int x = int.Parse(desenX.Value.ToString());
+                int y = int.Parse(desenY.Value.ToString());
+
+                if (fig is Cerc)
+                {
+
+                    Cerc cerc = (Cerc)fig;
+
+                    translate(x, y);
+
+                }
+                else if(fig is Linie) { 
+                
+                    Linie linie = (Linie)fig;
+
+                    translate(x, y);
+                }
+                else if(fig is Dreptunghi)
+                {
+                    Dreptunghi dreptunghi = (Dreptunghi)fig;
+
+                    translate(x, y);
+                }
+            }
+
+            RefreshPictureBox() ;
         }
 
     }

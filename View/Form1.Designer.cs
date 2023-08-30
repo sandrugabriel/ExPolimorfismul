@@ -71,6 +71,7 @@
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.cmbTranslatare = new System.Windows.Forms.ComboBox();
             this.grpTranCerc = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDuplCerc = new System.Windows.Forms.Button();
             this.btnTranCerc = new System.Windows.Forms.Button();
             this.tranCercY = new System.Windows.Forms.NumericUpDown();
@@ -79,6 +80,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.grpTranLinie = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnDubLinie = new System.Windows.Forms.Button();
             this.btnTranLinie = new System.Windows.Forms.Button();
             this.tranLinieY = new System.Windows.Forms.NumericUpDown();
@@ -87,6 +89,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.grpTranDreptunghi = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnDubDreptunghi = new System.Windows.Forms.Button();
             this.btnTranDreptunghi = new System.Windows.Forms.Button();
             this.tranDrepY = new System.Windows.Forms.NumericUpDown();
@@ -94,12 +97,17 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.grpDesen = new System.Windows.Forms.GroupBox();
+            this.btnStergereDesen = new System.Windows.Forms.Button();
+            this.btnTranDesen = new System.Windows.Forms.Button();
+            this.desenY = new System.Windows.Forms.NumericUpDown();
+            this.desenX = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.grpDreptunghi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dreptY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dreptHeigth)).BeginInit();
@@ -125,6 +133,9 @@
             this.grpTranDreptunghi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tranDrepY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tranDrepX)).BeginInit();
+            this.grpDesen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.desenY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desenX)).BeginInit();
             this.SuspendLayout();
             // 
             // grpDreptunghi
@@ -600,13 +611,29 @@
             this.grpTranCerc.Controls.Add(this.label4);
             this.grpTranCerc.Controls.Add(this.label17);
             this.grpTranCerc.Controls.Add(this.label18);
-            this.grpTranCerc.Location = new System.Drawing.Point(27, 481);
+            this.grpTranCerc.Location = new System.Drawing.Point(24, 478);
             this.grpTranCerc.Name = "grpTranCerc";
             this.grpTranCerc.Size = new System.Drawing.Size(361, 219);
             this.grpTranCerc.TabIndex = 10;
             this.grpTranCerc.TabStop = false;
             this.grpTranCerc.Text = "Cerc";
             this.grpTranCerc.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(255, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 115);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Stergere";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnsStergere_Click);
             // 
             // btnDuplCerc
             // 
@@ -711,6 +738,22 @@
             this.grpTranLinie.Text = "Linie";
             this.grpTranLinie.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(259, 28);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 115);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Stergere";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnsStergere_Click);
+            // 
             // btnDubLinie
             // 
             this.btnDubLinie.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -814,6 +857,21 @@
             this.grpTranDreptunghi.Text = "Dreptunghi";
             this.grpTranDreptunghi.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(259, 28);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 115);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Stergere";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnsStergere_Click);
+            // 
             // btnDubDreptunghi
             // 
             this.btnDubDreptunghi.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -898,53 +956,6 @@
             this.label30.TabIndex = 3;
             this.label30.Text = "X=";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(255, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 115);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Stergere";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnsStergere_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(259, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 115);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Stergere";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnsStergere_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(259, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 115);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Stergere";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.btnsStergere_Click);
-            // 
             // bunifuElipse6
             // 
             this.bunifuElipse6.ElipseRadius = 35;
@@ -960,14 +971,119 @@
             this.bunifuElipse8.ElipseRadius = 35;
             this.bunifuElipse8.TargetControl = this.grpTranLinie;
             // 
+            // grpDesen
+            // 
+            this.grpDesen.BackColor = System.Drawing.SystemColors.Control;
+            this.grpDesen.Controls.Add(this.btnStergereDesen);
+            this.grpDesen.Controls.Add(this.btnTranDesen);
+            this.grpDesen.Controls.Add(this.desenY);
+            this.grpDesen.Controls.Add(this.desenX);
+            this.grpDesen.Controls.Add(this.label6);
+            this.grpDesen.Controls.Add(this.label20);
+            this.grpDesen.Controls.Add(this.label22);
+            this.grpDesen.Location = new System.Drawing.Point(21, 481);
+            this.grpDesen.Name = "grpDesen";
+            this.grpDesen.Size = new System.Drawing.Size(361, 219);
+            this.grpDesen.TabIndex = 10;
+            this.grpDesen.TabStop = false;
+            this.grpDesen.Text = "Desenul";
+            this.grpDesen.Visible = false;
+            // 
+            // btnStergereDesen
+            // 
+            this.btnStergereDesen.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnStergereDesen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStergereDesen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnStergereDesen.FlatAppearance.BorderSize = 0;
+            this.btnStergereDesen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStergereDesen.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnStergereDesen.Location = new System.Drawing.Point(255, 28);
+            this.btnStergereDesen.Name = "btnStergereDesen";
+            this.btnStergereDesen.Size = new System.Drawing.Size(103, 151);
+            this.btnStergereDesen.TabIndex = 7;
+            this.btnStergereDesen.Text = "Stergere";
+            this.btnStergereDesen.UseVisualStyleBackColor = false;
+            this.btnStergereDesen.Click += new System.EventHandler(this.btnStergere_Click);
+            // 
+            // btnTranDesen
+            // 
+            this.btnTranDesen.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTranDesen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTranDesen.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnTranDesen.FlatAppearance.BorderSize = 0;
+            this.btnTranDesen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTranDesen.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTranDesen.Location = new System.Drawing.Point(3, 179);
+            this.btnTranDesen.Name = "btnTranDesen";
+            this.btnTranDesen.Size = new System.Drawing.Size(355, 37);
+            this.btnTranDesen.TabIndex = 5;
+            this.btnTranDesen.Text = "Translatare";
+            this.btnTranDesen.UseVisualStyleBackColor = false;
+            this.btnTranDesen.Click += new System.EventHandler(this.btnTranslatare_Click);
+            // 
+            // desenY
+            // 
+            this.desenY.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.desenY.Location = new System.Drawing.Point(78, 109);
+            this.desenY.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.desenY.Name = "desenY";
+            this.desenY.Size = new System.Drawing.Size(58, 28);
+            this.desenY.TabIndex = 4;
+            // 
+            // desenX
+            // 
+            this.desenX.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.desenX.Location = new System.Drawing.Point(78, 70);
+            this.desenX.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.desenX.Name = "desenX";
+            this.desenX.Size = new System.Drawing.Size(58, 28);
+            this.desenX.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 23);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Y=";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 11.8F);
+            this.label20.Location = new System.Drawing.Point(33, 36);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 23);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "Punctul";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(32, 71);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(34, 23);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "X=";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1479, 749);
-            this.Controls.Add(this.grpLinie);
             this.Controls.Add(this.grpTranCerc);
+            this.Controls.Add(this.grpLinie);
+            this.Controls.Add(this.grpDesen);
             this.Controls.Add(this.grpCerc);
             this.Controls.Add(this.grpTranLinie);
             this.Controls.Add(this.pictureBox1);
@@ -1013,6 +1129,10 @@
             this.grpTranDreptunghi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tranDrepY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tranDrepX)).EndInit();
+            this.grpDesen.ResumeLayout(false);
+            this.grpDesen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.desenY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desenX)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1090,6 +1210,14 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
+        private System.Windows.Forms.GroupBox grpDesen;
+        private System.Windows.Forms.Button btnStergereDesen;
+        private System.Windows.Forms.Button btnTranDesen;
+        private System.Windows.Forms.NumericUpDown desenY;
+        private System.Windows.Forms.NumericUpDown desenX;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label22;
     }
 }
 
