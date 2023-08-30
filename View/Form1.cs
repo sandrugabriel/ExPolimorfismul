@@ -253,11 +253,9 @@ namespace View
 
             foreach (Figura figura in figuri)
             {
-              // MessageBox.Show(figura.Nume + "  " + figuraSelectataString);
                 if (figura.Nume == select)
                 { 
                     figuraSelectata = figura;
-                   // MessageBox.Show(figura.Nume);
                     figuraSelectata.culoare = Color.Red;
                     RefreshPictureBox();
 
