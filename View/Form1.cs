@@ -40,7 +40,7 @@ namespace View
                 int raza = int.Parse(cercRaza.Value.ToString());
 
                 Punct punct = new Punct(x, y);
-                Cerc cerc = new Cerc(raza, punct,"cerc"+ct.ToString());
+                Cerc cerc = new Cerc(raza, punct,txtCerc.Text);
                // MessageBox.Show("Name: "+cerc.Name);
                 cerc.culoare = Color.Black;
                 cerc.draw(pctDesen, graphics);
@@ -58,7 +58,7 @@ namespace View
                 Punct punct = new Punct(x, y);
                 Punct punct1 = new Punct(x1, y1);
 
-                Linie linie = new Linie(punct , punct1, "linie" + ct.ToString());
+                Linie linie = new Linie(punct , punct1, txtLinie.Text);
                 linie.culoare = Color.Black;
                 linie.draw(pctDesen, graphics);
                 figuri.Add(linie);
@@ -73,7 +73,7 @@ namespace View
                 int height = int.Parse(dreptHeigth.Value.ToString());
 
                 Punct punct = new Punct(x,y);
-                Dreptunghi dreptunghi = new Dreptunghi(punct , width, height, "dreptunghi" + ct.ToString());
+                Dreptunghi dreptunghi = new Dreptunghi(punct , width, height, txtDrept.Text);
                 dreptunghi.culoare = Color.Black;
                 dreptunghi.draw(pctDesen,graphics);
 
@@ -372,6 +372,64 @@ namespace View
             }
 
             RefreshPictureBox() ;
+        }
+
+        private void txtLinie_enter(object sender, EventArgs e)
+        {
+            this.txtLinie.ForeColor = Color.Black;
+            this.txtLinie.Text = "";
+           // MessageBox.Show("Asda");
+
+        }
+
+        private void txtLinie_Leve(object sender, EventArgs e)
+        {
+            if (txtLinie.Text.Equals(""))
+            {
+                this.txtLinie.Text = "Numele Liniei";
+                this.txtLinie.ForeColor = SystemColors.AppWorkspace;
+            }
+        }
+
+        private void txtCerc_Enter(object sender, EventArgs e)
+        {
+
+            this.txtCerc.ForeColor = Color.Black;
+            this.txtCerc.Text = "";
+        }
+
+        private void txtCerc_Leve(object sender, EventArgs e)
+        {
+            if (txtCerc.Text.Equals(""))
+            {
+                this.txtCerc.Text = "Numele Cercului";
+                this.txtCerc.ForeColor = SystemColors.AppWorkspace;
+            }
+
+        }
+
+        private void txtDpret_Enter(object sender, EventArgs e)
+        {
+
+            this.txtDrept.ForeColor = Color.Black;
+            this.txtDrept.Text = "";
+        }
+
+        private void txtDrpet_Leve(object sender, EventArgs e)
+        {
+
+            if (txtCerc.Text.Equals(""))
+            {
+                this.txtDrept.Text = "Numele Cercului";
+                this.txtDrept.ForeColor = SystemColors.AppWorkspace;
+            }
+        }
+
+        private void btnSalvareDesen_Click(object sender, EventArgs e)
+        {
+
+           
+
         }
 
     }

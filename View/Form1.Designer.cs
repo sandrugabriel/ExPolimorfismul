@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpDreptunghi = new System.Windows.Forms.GroupBox();
+            this.txtDrept = new ZBobb.AlphaBlendTextBox();
             this.btnDreptunghi = new System.Windows.Forms.Button();
             this.dreptY = new System.Windows.Forms.NumericUpDown();
             this.dreptHeigth = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grpLinie = new System.Windows.Forms.GroupBox();
+            this.txtLinie = new ZBobb.AlphaBlendTextBox();
             this.btnLinie = new System.Windows.Forms.Button();
             this.linieY1 = new System.Windows.Forms.NumericUpDown();
             this.linieY = new System.Windows.Forms.NumericUpDown();
@@ -53,6 +55,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.grpCerc = new System.Windows.Forms.GroupBox();
+            this.txtCerc = new ZBobb.AlphaBlendTextBox();
             this.btnCerc = new System.Windows.Forms.Button();
             this.cercY = new System.Windows.Forms.NumericUpDown();
             this.cercX = new System.Windows.Forms.NumericUpDown();
@@ -108,6 +111,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.grpDreptunghi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dreptY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dreptHeigth)).BeginInit();
@@ -141,6 +145,7 @@
             // grpDreptunghi
             // 
             this.grpDreptunghi.BackColor = System.Drawing.SystemColors.Control;
+            this.grpDreptunghi.Controls.Add(this.txtDrept);
             this.grpDreptunghi.Controls.Add(this.btnDreptunghi);
             this.grpDreptunghi.Controls.Add(this.dreptY);
             this.grpDreptunghi.Controls.Add(this.dreptHeigth);
@@ -151,13 +156,26 @@
             this.grpDreptunghi.Controls.Add(this.label5);
             this.grpDreptunghi.Controls.Add(this.label3);
             this.grpDreptunghi.Controls.Add(this.label1);
-            this.grpDreptunghi.Location = new System.Drawing.Point(33, 161);
+            this.grpDreptunghi.Location = new System.Drawing.Point(30, 112);
             this.grpDreptunghi.Name = "grpDreptunghi";
-            this.grpDreptunghi.Size = new System.Drawing.Size(361, 219);
+            this.grpDreptunghi.Size = new System.Drawing.Size(361, 275);
             this.grpDreptunghi.TabIndex = 8;
             this.grpDreptunghi.TabStop = false;
             this.grpDreptunghi.Text = "Dreptunghi";
             this.grpDreptunghi.Visible = false;
+            // 
+            // txtDrept
+            // 
+            this.txtDrept.BackAlpha = 10;
+            this.txtDrept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDrept.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDrept.Location = new System.Drawing.Point(65, 166);
+            this.txtDrept.Name = "txtDrept";
+            this.txtDrept.Size = new System.Drawing.Size(241, 32);
+            this.txtDrept.TabIndex = 13;
+            this.txtDrept.Text = "Numele Dreptunghiului";
+            this.txtDrept.Enter += new System.EventHandler(this.txtDpret_Enter);
+            this.txtDrept.Leave += new System.EventHandler(this.txtDrpet_Leve);
             // 
             // btnDreptunghi
             // 
@@ -165,7 +183,7 @@
             this.btnDreptunghi.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDreptunghi.FlatAppearance.BorderSize = 0;
             this.btnDreptunghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDreptunghi.Location = new System.Drawing.Point(3, 167);
+            this.btnDreptunghi.Location = new System.Drawing.Point(3, 223);
             this.btnDreptunghi.Name = "btnDreptunghi";
             this.btnDreptunghi.Size = new System.Drawing.Size(355, 49);
             this.btnDreptunghi.TabIndex = 5;
@@ -276,6 +294,7 @@
             // grpLinie
             // 
             this.grpLinie.BackColor = System.Drawing.SystemColors.Control;
+            this.grpLinie.Controls.Add(this.txtLinie);
             this.grpLinie.Controls.Add(this.btnLinie);
             this.grpLinie.Controls.Add(this.linieY1);
             this.grpLinie.Controls.Add(this.linieY);
@@ -287,13 +306,26 @@
             this.grpLinie.Controls.Add(this.label14);
             this.grpLinie.Controls.Add(this.label15);
             this.grpLinie.Controls.Add(this.label16);
-            this.grpLinie.Location = new System.Drawing.Point(33, 161);
+            this.grpLinie.Location = new System.Drawing.Point(30, 112);
             this.grpLinie.Name = "grpLinie";
-            this.grpLinie.Size = new System.Drawing.Size(361, 219);
+            this.grpLinie.Size = new System.Drawing.Size(361, 275);
             this.grpLinie.TabIndex = 9;
             this.grpLinie.TabStop = false;
             this.grpLinie.Text = "Linie";
             this.grpLinie.Visible = false;
+            // 
+            // txtLinie
+            // 
+            this.txtLinie.BackAlpha = 10;
+            this.txtLinie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtLinie.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtLinie.Location = new System.Drawing.Point(56, 169);
+            this.txtLinie.Name = "txtLinie";
+            this.txtLinie.Size = new System.Drawing.Size(241, 32);
+            this.txtLinie.TabIndex = 13;
+            this.txtLinie.Text = "Numele Liniei";
+            this.txtLinie.Enter += new System.EventHandler(this.txtLinie_enter);
+            this.txtLinie.Leave += new System.EventHandler(this.txtLinie_Leve);
             // 
             // btnLinie
             // 
@@ -301,7 +333,7 @@
             this.btnLinie.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLinie.FlatAppearance.BorderSize = 0;
             this.btnLinie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinie.Location = new System.Drawing.Point(3, 167);
+            this.btnLinie.Location = new System.Drawing.Point(3, 223);
             this.btnLinie.Name = "btnLinie";
             this.btnLinie.Size = new System.Drawing.Size(355, 49);
             this.btnLinie.TabIndex = 5;
@@ -420,6 +452,7 @@
             // grpCerc
             // 
             this.grpCerc.BackColor = System.Drawing.SystemColors.Control;
+            this.grpCerc.Controls.Add(this.txtCerc);
             this.grpCerc.Controls.Add(this.btnCerc);
             this.grpCerc.Controls.Add(this.cercY);
             this.grpCerc.Controls.Add(this.cercX);
@@ -428,20 +461,34 @@
             this.grpCerc.Controls.Add(this.label9);
             this.grpCerc.Controls.Add(this.label11);
             this.grpCerc.Controls.Add(this.label12);
-            this.grpCerc.Location = new System.Drawing.Point(33, 161);
+            this.grpCerc.Location = new System.Drawing.Point(30, 112);
             this.grpCerc.Name = "grpCerc";
-            this.grpCerc.Size = new System.Drawing.Size(361, 219);
+            this.grpCerc.Size = new System.Drawing.Size(361, 275);
             this.grpCerc.TabIndex = 10;
             this.grpCerc.TabStop = false;
             this.grpCerc.Text = "Cerc";
             this.grpCerc.Visible = false;
             // 
+            // txtCerc
+            // 
+            this.txtCerc.BackAlpha = 10;
+            this.txtCerc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtCerc.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtCerc.Location = new System.Drawing.Point(55, 167);
+            this.txtCerc.Name = "txtCerc";
+            this.txtCerc.Size = new System.Drawing.Size(241, 32);
+            this.txtCerc.TabIndex = 13;
+            this.txtCerc.Text = "Numele Cercului";
+            this.txtCerc.Enter += new System.EventHandler(this.txtCerc_Enter);
+            this.txtCerc.Leave += new System.EventHandler(this.txtCerc_Leve);
+            // 
             // btnCerc
             // 
             this.btnCerc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCerc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCerc.FlatAppearance.BorderSize = 0;
             this.btnCerc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerc.Location = new System.Drawing.Point(3, 167);
+            this.btnCerc.Location = new System.Drawing.Point(3, 223);
             this.btnCerc.Name = "btnCerc";
             this.btnCerc.Size = new System.Drawing.Size(355, 49);
             this.btnCerc.TabIndex = 5;
@@ -546,7 +593,7 @@
             "Cerc",
             "Linie",
             "Dreptunghi"});
-            this.comboBox1.Location = new System.Drawing.Point(90, 84);
+            this.comboBox1.Location = new System.Drawing.Point(72, 59);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 33);
@@ -592,7 +639,7 @@
             this.cmbTranslatare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbTranslatare.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.cmbTranslatare.FormattingEnabled = true;
-            this.cmbTranslatare.Location = new System.Drawing.Point(90, 411);
+            this.cmbTranslatare.Location = new System.Drawing.Point(95, 429);
             this.cmbTranslatare.Margin = new System.Windows.Forms.Padding(5);
             this.cmbTranslatare.Name = "cmbTranslatare";
             this.cmbTranslatare.Size = new System.Drawing.Size(261, 33);
@@ -611,7 +658,7 @@
             this.grpTranCerc.Controls.Add(this.label4);
             this.grpTranCerc.Controls.Add(this.label17);
             this.grpTranCerc.Controls.Add(this.label18);
-            this.grpTranCerc.Location = new System.Drawing.Point(24, 478);
+            this.grpTranCerc.Location = new System.Drawing.Point(29, 496);
             this.grpTranCerc.Name = "grpTranCerc";
             this.grpTranCerc.Size = new System.Drawing.Size(361, 219);
             this.grpTranCerc.TabIndex = 10;
@@ -730,7 +777,7 @@
             this.grpTranLinie.Controls.Add(this.label21);
             this.grpTranLinie.Controls.Add(this.label24);
             this.grpTranLinie.Controls.Add(this.label25);
-            this.grpTranLinie.Location = new System.Drawing.Point(27, 478);
+            this.grpTranLinie.Location = new System.Drawing.Point(32, 496);
             this.grpTranLinie.Name = "grpTranLinie";
             this.grpTranLinie.Size = new System.Drawing.Size(361, 219);
             this.grpTranLinie.TabIndex = 9;
@@ -849,7 +896,7 @@
             this.grpTranDreptunghi.Controls.Add(this.label26);
             this.grpTranDreptunghi.Controls.Add(this.label29);
             this.grpTranDreptunghi.Controls.Add(this.label30);
-            this.grpTranDreptunghi.Location = new System.Drawing.Point(27, 481);
+            this.grpTranDreptunghi.Location = new System.Drawing.Point(32, 499);
             this.grpTranDreptunghi.Name = "grpTranDreptunghi";
             this.grpTranDreptunghi.Size = new System.Drawing.Size(361, 219);
             this.grpTranDreptunghi.TabIndex = 8;
@@ -981,7 +1028,7 @@
             this.grpDesen.Controls.Add(this.label6);
             this.grpDesen.Controls.Add(this.label20);
             this.grpDesen.Controls.Add(this.label22);
-            this.grpDesen.Location = new System.Drawing.Point(21, 481);
+            this.grpDesen.Location = new System.Drawing.Point(26, 499);
             this.grpDesen.Name = "grpDesen";
             this.grpDesen.Size = new System.Drawing.Size(361, 219);
             this.grpDesen.TabIndex = 10;
@@ -1075,12 +1122,27 @@
             this.label22.TabIndex = 3;
             this.label22.Text = "X=";
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(863, 9);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(173, 54);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Salvare desen";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnSalvareDesen_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1479, 749);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.grpTranCerc);
             this.Controls.Add(this.grpLinie);
             this.Controls.Add(this.grpDesen);
@@ -1218,6 +1280,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
+        private ZBobb.AlphaBlendTextBox txtLinie;
+        private ZBobb.AlphaBlendTextBox txtDrept;
+        private ZBobb.AlphaBlendTextBox txtCerc;
+        private System.Windows.Forms.Button button4;
     }
 }
 
