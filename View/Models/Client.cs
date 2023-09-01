@@ -15,14 +15,13 @@ namespace View.Models
         private List<int> like = new List<int>();
         private List<int> favorite = new List<int>();
 
-        public Client(int id, string name, string password, List<int> like, List<int> favorite, int id)
+        public Client(int id, string name, string password, List<int> like, List<int> favorite)
         {
             Id = id;
             this.name = name;
             this.password = password;
             this.like = like;
             this.favorite = favorite;
-            Id = id;
         }
 
         public Client(string text)
@@ -32,6 +31,30 @@ namespace View.Models
             this.id = int.Parse(prop[0]);
             this.name = prop[1];
             this.password = prop[2];
+            int semn = 0;
+            for(int i=3;i<prop.Length; i++)
+            {
+
+                if (prop[i].Equals("fav"))
+                {
+                    semn = 1;
+                }
+                else
+                {
+
+                    if (semn == 0)
+                    {
+                        like.Add(int.Parse(prop[i]));
+                    }
+                    else
+                    {
+                        favorite.Add(int.Parse(prop[i]));
+                    }
+
+                }
+
+
+            }
 
         }
 
