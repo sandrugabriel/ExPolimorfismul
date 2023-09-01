@@ -10,17 +10,27 @@ namespace View.Models
 {
     internal class Cerc : Figura
     {
-        int raza;
-        Punct punct;
+        private int raza;
+        private Punct punct;
 
         public int Raza { get => raza; set => raza = value; }
         public Punct Punct { get => punct; set => punct = value; }
 
-        public Cerc(int raza, Punct punct, string name):base(name)
+        public Cerc(string type,int id,int raza, Punct punct, string name):base(name, id, type)
         {
 
             this.raza = raza;
             this.punct = punct;
+
+        }
+
+        public Cerc(string text) : base(text)
+        {
+
+            string[] prop = text.Split(';');
+
+            this.raza = int.Parse(prop[3]);
+            this.punct = new Punct(int.Parse(prop[4]),int.Parse(prop[5]));
 
         }
 
@@ -55,7 +65,7 @@ namespace View.Models
         {
             MessageBox.Show("S-a duplicat");
 
-            return new Cerc(this.raza, this.punct,Nume);
+            return new Cerc(Type,Id,this.raza, this.punct,Nume);
         }
 
         public void draw(PictureBox pctDesen, Graphics graphics)

@@ -14,10 +14,19 @@ namespace View.Models
         private Punct punct1;
         private Punct punct2;
 
-        public Linie(Punct punct1, Punct punct2,string name):base(name)
+        public Linie(string type,int id,Punct punct1, Punct punct2,string name):base(name, id, type)
         {
             this.punct1 = punct1;
             this.punct2 = punct2;
+        }
+
+        public Linie(string text) : base(text)
+        {
+            string[] prop = text.Split(';');
+
+            this.punct1 = new Punct(int.Parse(prop[3]),int.Parse(prop[4]));
+            this.punct2 = new Punct(int.Parse(prop[5]),int.Parse(prop[6]));
+
         }
 
         public Punct Punct1 { get => punct1; set => punct1 = value; }
@@ -45,7 +54,7 @@ namespace View.Models
         {
             MessageBox.Show("S-a duplicat");
 
-            return new Linie(this.punct1, this.punct2, Nume);
+            return new Linie(Type,Id, this.punct1, this.punct2, Nume);
         }
 
         public override void translatare(int x, int y)
