@@ -281,7 +281,7 @@ namespace View.Panels
         private void link_Click(object sender, EventArgs e)
         {
             this.form.removePnl("PnlLogin");
-
+            this.form.Controls.Add(new PnlSignUp(form));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

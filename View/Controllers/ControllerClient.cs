@@ -72,5 +72,39 @@ namespace View.Controllers
             return null;
         }
 
+        public Client getById(int id)
+        {
+
+            for (int i = 0; i < clienti.Count; i++)
+            {
+                if (id == clienti[i].Id) return clienti[i];
+            }
+
+            return null;
+        }
+
+        public int generareId()
+        {
+
+            Random random = new Random();
+
+            int id = random.Next(0, 10000);
+
+            while (this.getById(id) != null)
+            {
+                id = random.Next(0, 100000);
+            }
+
+            return id;
+        }
+
+        public void save(string text)
+        {
+
+            string path = Application.StartupPath + @"/data/useri.txt";
+            File.AppendAllText(path, text + "\n");
+
+        }
+
     }
 }
