@@ -63,11 +63,41 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mockup.cs">
+    <Compile Include="Mockups\MockupAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mockup.Designer.cs">
-      <DependentUpon>Mockup.cs</DependentUpon>
+    <Compile Include="Mockups\MockupAdd.Designer.cs">
+      <DependentUpon>MockupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\MockupCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupCard.Designer.cs">
+      <DependentUpon>MockupCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\MockupCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupCards.Designer.cs">
+      <DependentUpon>MockupCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\MockupHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupHome.Designer.cs">
+      <DependentUpon>MockupHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\MockupLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupLogin.Designer.cs">
+      <DependentUpon>MockupLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\MockupSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupSignUp.Designer.cs">
+      <DependentUpon>MockupSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Figurile\Cerc.cs" />
     <Compile Include="Models\Figurile\Dreptunghi.cs" />
@@ -78,11 +108,23 @@
     <Compile Include="Models\DetaliDesen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Mockups\MockupAdd.resx">
+      <DependentUpon>MockupAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mockup.resx">
-      <DependentUpon>Mockup.cs</DependentUpon>
+    <EmbeddedResource Include="Mockups\MockupCard.resx">
+      <DependentUpon>MockupCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockups\MockupCards.resx">
+      <DependentUpon>MockupCards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockups\MockupHome.resx">
+      <DependentUpon>MockupHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockups\MockupLogin.resx">
+      <DependentUpon>MockupLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockups\MockupSignUp.resx">
+      <DependentUpon>MockupSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +151,165 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_login %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_sign-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-button-of-three-horizontal-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-button-of-three-horizontal-lines %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%29 %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favorite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favorite %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29 %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favorite %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favorite %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like %282%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favorite %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %282%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

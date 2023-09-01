@@ -8,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace View
+namespace View.Mockups
 {
-    public partial class Mockup : Form
+    public partial class MockupLogin : Form
     {
-        public Mockup()
+        public MockupLogin()
         {
             InitializeComponent();
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(this.Width.ToString() + " " + this.Height.ToString());
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }
