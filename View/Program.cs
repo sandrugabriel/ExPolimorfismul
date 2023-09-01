@@ -15,12 +15,12 @@ namespace View
         /// </summary>
         [STAThread]
         static void Main()
-        {/*
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MockupHome());*/
-            ControllerClient client = new ControllerClient();
-            client.afisare();
+            Application.Run(new Form1());
+
+
         }
     }
 }

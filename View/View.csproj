@@ -106,8 +106,14 @@
     <Compile Include="Models\Figurile\Punct.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\DetaliDesen.cs" />
+    <Compile Include="Panels\PnlLogin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mockups\MockupAdd.resx">
       <DependentUpon>MockupAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gradient %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
