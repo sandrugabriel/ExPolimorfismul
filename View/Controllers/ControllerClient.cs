@@ -46,5 +46,31 @@ namespace View.Controllers
             }
         }
 
+        public bool verificare(string name, string pass)
+        {
+
+            for(int i = 0; i < clienti.Count; i++)
+            {
+                if (clienti[i].Name == name && clienti[i].Password == pass)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Client getClient(string name, string pass)
+        {
+
+            for (int i = 0; i < clienti.Count; i++)
+            {
+                if (clienti[i].Name == name && clienti[i].Password == pass)
+                {
+                    return clienti[i];
+                }
+            }
+            return null;
+        }
+
     }
 }

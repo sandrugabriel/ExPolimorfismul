@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.Panels;
 
 namespace View
 {
@@ -15,6 +16,28 @@ namespace View
         public Form1()
         {
             InitializeComponent();
+
+            this.Controls.Add(new PnlLogin(this));
         }
+
+        public void removePnl(string pnl)
+        {
+
+            Control control = null;
+
+            foreach(Control c in this.Controls)
+            {
+
+                if (c.Name.Equals(pnl))
+                {
+                    control = c;
+                }
+
+            }
+
+            this.Controls.Remove(control);
+
+        }
+
     }
 }
