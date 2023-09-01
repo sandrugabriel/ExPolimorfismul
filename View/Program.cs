@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.Controllers;
 using View.Mockups;
 
 namespace View
@@ -14,10 +15,12 @@ namespace View
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {/*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MockupHome());
+            Application.Run(new MockupHome());*/
+            ControllerClient client = new ControllerClient();
+            client.afisare();
         }
     }
 }

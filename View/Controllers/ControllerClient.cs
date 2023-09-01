@@ -13,11 +13,11 @@ namespace View.Controllers
     internal class ControllerClient
     {
 
-        List<Client> users;
+        List<Client> clienti;
 
         public ControllerClient()
         {
-            users = new List<Client>();
+            clienti = new List<Client>();
 
             load();
         }
@@ -32,12 +32,19 @@ namespace View.Controllers
 
             while((t = streamReader.ReadLine()) != null)
             {
-                users.Add(new Client(t));
+                clienti.Add(new Client(t));
             }
 
             streamReader.Close();
         }
 
+        public void afisare()
+        {
+            foreach (Client client in clienti)
+            {
+                MessageBox.Show(client.Id.ToString());
+            }
+        }
 
     }
 }
