@@ -12,13 +12,17 @@ namespace View.Models
         private int id;
         private string name;
         private string password;
+        private List<int> like = new List<int>();
+        private List<int> favorite = new List<int>();
 
-        public Client(int id, string name,string pass) {
-        
+        public Client(int id, string name, string password, List<int> like, List<int> favorite, int id)
+        {
+            Id = id;
             this.name = name;
-            this.id = id;
-            this.password = pass;
-        
+            this.password = password;
+            this.like = like;
+            this.favorite = favorite;
+            Id = id;
         }
 
         public Client(string text)
