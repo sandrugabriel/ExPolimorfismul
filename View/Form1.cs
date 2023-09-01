@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.Controllers;
 using View.Models;
 
 namespace View
@@ -18,6 +21,9 @@ namespace View
         List<Figura> figuri;
         private int ct;
         private Figura figuraSelectata;
+        ControllerFigura controllerFigura;
+        ControllerDetalii controllerDetalii;
+        int idClient;
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +31,11 @@ namespace View
             bitmap = new Bitmap(pctDesen.Width, pctDesen.Height);
             figuri = new List<Figura>();
             ct = 0;
+
+            controllerFigura = new ControllerFigura();
+            controllerDetalii = new ControllerDetalii();
+            
+            idClient = 0;
         }
 
         private void btns_Click(object sender, EventArgs e)
@@ -40,7 +51,7 @@ namespace View
                 int raza = int.Parse(cercRaza.Value.ToString());
 
                 Punct punct = new Punct(x, y);
-                Cerc cerc = new Cerc(raza, punct,txtCerc.Text);
+                Cerc cerc = new Cerc("cerc",controllerFigura.generareId(),raza, punct,txtCerc.Text);
                // MessageBox.Show("Name: "+cerc.Name);
                 cerc.culoare = Color.Black;
                 cerc.draw(pctDesen, graphics);
@@ -58,7 +69,7 @@ namespace View
                 Punct punct = new Punct(x, y);
                 Punct punct1 = new Punct(x1, y1);
 
-                Linie linie = new Linie(punct , punct1, txtLinie.Text);
+                Linie linie = new Linie("linie",controllerFigura.generareId(),punct , punct1, txtLinie.Text);
                 linie.culoare = Color.Black;
                 linie.draw(pctDesen, graphics);
                 figuri.Add(linie);
@@ -73,7 +84,7 @@ namespace View
                 int height = int.Parse(dreptHeigth.Value.ToString());
 
                 Punct punct = new Punct(x,y);
-                Dreptunghi dreptunghi = new Dreptunghi(punct , width, height, txtDrept.Text);
+                Dreptunghi dreptunghi = new Dreptunghi("dreptunghi",controllerFigura.generareId(),punct , width, height, txtDrept.Text);
                 dreptunghi.culoare = Color.Black;
                 dreptunghi.draw(pctDesen,graphics);
 
@@ -151,21 +162,21 @@ namespace View
             if (figuraSelectata is Cerc)
             {
                 Cerc cerc = (Cerc)figuraSelectata;
-                Cerc cerc1 = new Cerc(cerc.Raza,cerc.Punct, "cerc" + ct.ToString());
+                Cerc cerc1 = new Cerc("cerc", controllerFigura.generareId(), cerc.Raza,cerc.Punct, "cerc" + ct.ToString());
                 cerc1.draw(pctDesen, graphics);
                 figuri.Add(cerc1);
             }
             else if (figuraSelectata is Linie)
             {
                 Linie l = (Linie)figuraSelectata;
-                Linie l1 = new Linie(l.Punct1,l.Punct2,"linie" + ct.ToString());
+                Linie l1 = new Linie("linie", controllerFigura.generareId(), l.Punct1,l.Punct2,"linie" + ct.ToString());
                 l1.draw(pctDesen, graphics);
                 figuri.Add(l1);
             }
             else if (figuraSelectata is Dreptunghi)
             {
                 Dreptunghi d = (Dreptunghi)figuraSelectata;
-                Dreptunghi d1 = new Dreptunghi(d.Punct1,d.Width,d.Height,"dreptunghi" + ct.ToString());
+                Dreptunghi d1 = new Dreptunghi("dreptunghi", controllerFigura.generareId(), d.Punct1,d.Width,d.Height,"dreptunghi" + ct.ToString());
                 d1.draw(pctDesen, graphics);
                 figuri.Add(d1);
             }
@@ -256,7 +267,7 @@ namespace View
         {
             string select = cmbTranslatare.SelectedItem.ToString();
 
-            foreach(Figura figura1 in figuri)
+            foreach (Figura figura1 in figuri)
             {
                 figura1.culoare = Color.Black;
             }
@@ -269,7 +280,7 @@ namespace View
                     figuraSelectata.culoare = Color.Red;
                     RefreshPictureBox();
 
-                    if (select.Remove(4) == "cerc")
+                    if (figuraSelectata.Type == "cerc")
                     {
                         this.grpTranLinie.Visible = false;
                         this.grpTranCerc.Visible = true;
@@ -277,31 +288,30 @@ namespace View
                         this.grpDesen.Visible = false;
 
                     }
-                    else if (select.Remove(5) == "linie")
+                    else if (figuraSelectata.Type == "linie")
                     {
                         this.grpTranCerc.Visible = false;
                         this.grpTranDreptunghi.Visible = false;
                         this.grpTranLinie.Visible = true;
                         this.grpDesen.Visible = false;
                     }
-                    else if (select.Remove(10) == "dreptunghi")
+                    else if (figuraSelectata.Type == "dreptunghi")
                     {
                         this.grpTranCerc.Visible = false;
                         this.grpTranDreptunghi.Visible = true;
                         this.grpTranLinie.Visible = false;
                         this.grpDesen.Visible = false;
-
-
-                        for (int i = 0; i < figuri.Count; i++)
-                        {
-                            if (figuri[i] != figuraSelectata)
-                            {
-                                figuri[i].culoare = Color.Black;
-                            }
-                        }
-                        RefreshPictureBox();
-                        break;
                     }
+
+                    for (int i = 0; i < figuri.Count; i++)
+                    {
+                        if (figuri[i] != figuraSelectata)
+                        {
+                            figuri[i].culoare = Color.Black;
+                        }
+                    }
+                    RefreshPictureBox();
+                    break;
 
                 }
             }
@@ -425,12 +435,52 @@ namespace View
             }
         }
 
+        //  Image image;
+
         private void btnSalvareDesen_Click(object sender, EventArgs e)
         {
 
-           
+            for (int i = 0; i < figuri.Count; i++)
+            {
+                string text = "";
+
+                if (figuri[i].Type.Equals("cerc"))
+                {
+                    Cerc cerc = (Cerc)figuri[i];
+                    text = $"cerc;{cerc.Id};{cerc.Nume};{cerc.Raza};{cerc.Punct.X};{cerc.Punct.Y}";
+                }
+                else if (figuri[i].Type.Equals("linie"))
+                {
+                    Linie linie = (Linie)figuri[i];
+                    text = $"linie;{linie.Id};{linie.Nume};{linie.Punct1.X};{linie.Punct1.Y};{linie.Punct2.X};{linie.Punct2.Y}";
+                }
+                else if (figuri[i].Type.Equals("dreptunghi"))
+                {
+                    Dreptunghi drept = (Dreptunghi)figuri[i];
+                    text = $"dreptunghi;{drept.Id};{drept.Nume};{drept.Punct1.X};{drept.Punct1.Y};{drept.Width};{drept.Height}";
+                }
+
+                controllerFigura.save(text);
+            }
+
+            string detali = $"{controllerDetalii.generareId()};{idClient};{txtDesen.Text};";
+            for (int i = 0; i < figuri.Count; i++)
+            {
+                if (i == figuri.Count - 1)
+                {
+                    detali += figuri[i].Id;
+                }
+                else
+                    detali += figuri[i].Id + ";";
+            }
+
+            controllerDetalii.save(detali);
 
         }
 
+        private void txtLinie_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -111,7 +111,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSalvare = new System.Windows.Forms.Button();
+            this.txtDesen = new ZBobb.AlphaBlendTextBox();
             this.grpDreptunghi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dreptY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dreptHeigth)).BeginInit();
@@ -324,6 +325,7 @@
             this.txtLinie.Size = new System.Drawing.Size(241, 32);
             this.txtLinie.TabIndex = 13;
             this.txtLinie.Text = "Numele Liniei";
+            this.txtLinie.TextChanged += new System.EventHandler(this.txtLinie_TextChanged);
             this.txtLinie.Enter += new System.EventHandler(this.txtLinie_enter);
             this.txtLinie.Leave += new System.EventHandler(this.txtLinie_Leve);
             // 
@@ -1122,19 +1124,34 @@
             this.label22.TabIndex = 3;
             this.label22.Text = "X=";
             // 
-            // button4
+            // btnSalvare
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(863, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(173, 54);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Salvare desen";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.btnSalvareDesen_Click);
+            this.btnSalvare.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSalvare.FlatAppearance.BorderSize = 0;
+            this.btnSalvare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvare.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSalvare.Location = new System.Drawing.Point(1138, 7);
+            this.btnSalvare.Name = "btnSalvare";
+            this.btnSalvare.Size = new System.Drawing.Size(173, 54);
+            this.btnSalvare.TabIndex = 12;
+            this.btnSalvare.Text = "Salvare desen";
+            this.btnSalvare.UseVisualStyleBackColor = false;
+            this.btnSalvare.Click += new System.EventHandler(this.btnSalvareDesen_Click);
+            // 
+            // txtDesen
+            // 
+            this.txtDesen.BackAlpha = 10;
+            this.txtDesen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDesen.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesen.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDesen.Location = new System.Drawing.Point(595, 12);
+            this.txtDesen.Name = "txtDesen";
+            this.txtDesen.Size = new System.Drawing.Size(373, 44);
+            this.txtDesen.TabIndex = 13;
+            this.txtDesen.Text = "Numele Desenului";
+            this.txtDesen.TextChanged += new System.EventHandler(this.txtLinie_TextChanged);
+            this.txtDesen.Enter += new System.EventHandler(this.txtLinie_enter);
+            this.txtDesen.Leave += new System.EventHandler(this.txtLinie_Leve);
             // 
             // Form1
             // 
@@ -1142,7 +1159,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1479, 749);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.txtDesen);
+            this.Controls.Add(this.btnSalvare);
             this.Controls.Add(this.grpTranCerc);
             this.Controls.Add(this.grpLinie);
             this.Controls.Add(this.grpDesen);
@@ -1196,6 +1214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.desenY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.desenX)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1283,7 +1302,8 @@
         private ZBobb.AlphaBlendTextBox txtLinie;
         private ZBobb.AlphaBlendTextBox txtDrept;
         private ZBobb.AlphaBlendTextBox txtCerc;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSalvare;
+        private ZBobb.AlphaBlendTextBox txtDesen;
     }
 }
 
