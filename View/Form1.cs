@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.Models;
 using View.Panels;
 
 namespace View
@@ -16,8 +17,8 @@ namespace View
         public Form1()
         {
             InitializeComponent();
-
-            this.Controls.Add(new PnlLogin(this));
+            Client client = new Client("1;gabi;gabi1234;9385;fav;9385\r\n");
+            this.Controls.Add(new PnlHome(this,client));
         }
 
         public void removePnl(string pnl)

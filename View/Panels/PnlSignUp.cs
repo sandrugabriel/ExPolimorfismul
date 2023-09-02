@@ -287,7 +287,7 @@ namespace View.Panels
                     this.form.removePnl("PnlSignUp");
                     Client client = new Client(controllerClient.generareId(),txtName.Text,txtPass.Text,null,null);
                     controllerClient.save(controllerClient.generareId().ToString() + ";" + txtName.Text + ";" + txtPass.Text +";fav");
-                    
+                    this.form.Controls.Add(new PnlHome(form,client));
                 }
                 else
                 {

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using View.Controllers;
 using View.Mockups;
+using View.Panels;
 
 namespace View
 {

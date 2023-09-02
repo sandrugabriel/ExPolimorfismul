@@ -298,7 +298,7 @@ namespace View.Panels
                 {
                     this.form.removePnl("PnlLogin");
                     Client client = controllerClient.getClient(txtName.Text, txtPass.Text);
-
+                    this.form.Controls.Add(new PnlHome(form,client));
                 }
                 else
                 {
