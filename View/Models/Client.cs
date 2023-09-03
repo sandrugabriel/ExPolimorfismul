@@ -63,6 +63,7 @@ namespace View.Models
         public string Name { get => name; set => name = value; }
 
         public string Password { get => password; set => password = value; }
-
+        public List<int> Like { get => like; set => like = value; }
+        public List<int> Favorite { get => favorite; set => favorite = value; }
     }
 }

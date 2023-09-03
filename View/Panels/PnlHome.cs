@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using View.Controllers;
 using View.Models;
 using View.Properties;
@@ -137,11 +138,12 @@ namespace View.Panels
              
             // mini
             this.mini.BackColor = System.Drawing.Color.Transparent;
-            this.mini.Image = global::View.Properties.Resources.menu_button_of_three_horizontal_lines__1_;
+            this.mini.Image = Image.FromFile(path + "mini.png");
             this.mini.Location = new System.Drawing.Point(1391, 34);
             this.mini.Name = "mini";
             this.mini.Size = new System.Drawing.Size(28, 29);
             this.mini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.mini.Click += new EventHandler(mini_Click);
              
             // close
             this.close.BackColor = System.Drawing.Color.Transparent;
@@ -150,6 +152,7 @@ namespace View.Panels
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(28, 29);
             this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.close.Click += new EventHandler(close_Click);
              
             // pctProfile
             this.pctProfile.BackColor = System.Drawing.Color.Transparent;
@@ -194,6 +197,8 @@ namespace View.Panels
             this.txtSearch.Size = new System.Drawing.Size(317, 37);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.Text = " Search";
+            this.txtSearch.Enter += new EventHandler(txtSearch_Enter);
+            this.txtSearch.Leave += new EventHandler(txtSearch_Leve);
              
             // pctSearch
             this.pctSearch.BackColor = System.Drawing.Color.Transparent;
@@ -226,6 +231,29 @@ namespace View.Panels
 
         }
 
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Equals(" Search"))
+                this.txtSearch.Text = "";
+        }
+
+        private void txtSearch_Leve(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Equals(""))
+                this.txtSearch.Text = " Search";
+
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.form.Close();
+        }
+
+        private void mini_Click(object sender, EventArgs e)
+        {
+            this.form.WindowState = FormWindowState.Minimized;
+        }
 
     }
 }
