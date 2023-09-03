@@ -106,6 +106,9 @@
     <Compile Include="Models\Figurile\Punct.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\DetaliDesen.cs" />
+    <Compile Include="Panels\PnlCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panels\PnlHome.cs">
       <SubType>Component</SubType>
     </Compile>

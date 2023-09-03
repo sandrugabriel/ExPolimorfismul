@@ -81,5 +81,20 @@ namespace View.Controllers
 
         }
 
+        public List<Figura> getFigures(List<int> idFiguri) {
+
+            List<Figura> figures = null;
+
+            for (int i = 0; i < idFiguri.Count; i++)
+            {
+               for(int j = 0; j < figuri.Count; j++)
+                {
+                    if (idFiguri[i] == figuri[j].Id) figures.Add(figuri[i]);
+                }
+            }
+        
+            return figures;
+        }
+
     }
 }

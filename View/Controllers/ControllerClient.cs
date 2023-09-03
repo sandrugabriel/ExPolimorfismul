@@ -106,5 +106,36 @@ namespace View.Controllers
 
         }
 
+        public int pozIdClient(int id)
+        {
+
+            for(int i = 0; i < clienti.Count; i++)
+            {
+                if (clienti[i].Id == id) return i;
+            }
+            return -1;
+        }
+
+        public bool validFav(int idDesen, int idClient)
+        {
+            
+           // List<int> like = clienti[pozIdClient(idClient)].Like;
+            List<int> fav = clienti[pozIdClient(idClient)].Favorite;
+
+            for(int i=0;i<fav.Count;i++)
+                if (fav[i] == idDesen) return true;
+            return false;
+        }
+
+        public bool validLike(int idDesen, int idClient)
+        {
+
+             List<int> like = clienti[pozIdClient(idClient)].Like;
+            //List<int> fav = clienti[pozIdClient(idClient)].Favorite;
+
+            for (int i = 0; i < like.Count; i++)
+                if (like[i] == idDesen) return true;
+            return false;
+        }
     }
 }
