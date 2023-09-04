@@ -33,9 +33,6 @@ namespace View.Panels
         private System.Windows.Forms.PictureBox pctProfile;
         private System.Windows.Forms.Label lblClientNume;
         private System.Windows.Forms.PictureBox pctLogo;
-        private System.Windows.Forms.PictureBox pctDesign1;
-        private ZBobb.AlphaBlendTextBox txtSearch;
-        private System.Windows.Forms.PictureBox pctSearch;
         private Bunifu.Framework.UI.BunifuGradientPanel gradientPanel;
 
         private string path;
@@ -73,9 +70,6 @@ namespace View.Panels
             this.pctProfile = new System.Windows.Forms.PictureBox();
             this.lblClientNume = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.pctDesign1 = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new ZBobb.AlphaBlendTextBox();
-            this.pctSearch = new System.Windows.Forms.PictureBox();
             this.gradientPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
 
             this.Controls.Add(this.btnAdd);
@@ -183,40 +177,8 @@ namespace View.Panels
             this.pctLogo.Size = new System.Drawing.Size(114, 76);
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             
-            // pctDesign1
-            this.pctDesign1.Location = new System.Drawing.Point(464, 63);
-            this.pctDesign1.Name = "pctDesign1";
-            this.pctDesign1.Size = new System.Drawing.Size(348, 2);
-            this.pctDesign1.TabIndex = 9;
-            this.pctDesign1.TabStop = false;
-             
-            // txtSearch
-            this.txtSearch.BackAlpha = 0;
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtSearch.Location = new System.Drawing.Point(495, 30);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(317, 37);
-            this.txtSearch.TabIndex = 10;
-            this.txtSearch.Text = " Search";
-            this.txtSearch.Enter += new EventHandler(txtSearch_Enter);
-            this.txtSearch.Leave += new EventHandler(txtSearch_Leve);
-             
-            // pctSearch
-            this.pctSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pctSearch.Image = Image.FromFile(path + "search.png");
-            this.pctSearch.Location = new System.Drawing.Point(464, 35);
-            this.pctSearch.Name = "pctSearch";
-            this.pctSearch.Size = new System.Drawing.Size(26, 24);
-            this.pctSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-             
             // gradientPanel
             this.gradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gradientPanel.Controls.Add(this.pctSearch);
-            this.gradientPanel.Controls.Add(this.txtSearch);
-            this.gradientPanel.Controls.Add(this.pctDesign1);
             this.gradientPanel.Controls.Add(this.pctLogo);
             this.gradientPanel.Controls.Add(this.lblClientNume);
             this.gradientPanel.Controls.Add(this.pctProfile);
@@ -256,19 +218,6 @@ namespace View.Panels
             }
 
             this.Controls.Remove(control);
-
-        }
-
-        private void txtSearch_Enter(object sender, EventArgs e)
-        {
-            if (txtSearch.Text.Equals(" Search"))
-                this.txtSearch.Text = "";
-        }
-
-        private void txtSearch_Leve(object sender, EventArgs e)
-        {
-            if (txtSearch.Text.Equals(""))
-                this.txtSearch.Text = " Search";
 
         }
 
@@ -314,6 +263,11 @@ namespace View.Panels
             this.btnFavorite.BackgroundImage = null;
             this.btnAdd.BackgroundImage = null;
             this.btnHome.BackgroundImage = null;
+            List<DetaliDesen> detaliDesens = controllerDetalii.getFavo(controllerClient.getIdLike(client.Id));
+            this.removePnlHome("PnlCards");
+            toateCardurile = new PnlToateCardurile(form, detaliDesens, client);
+            toateCardurile.Location = new Point(260, 97);
+            this.Controls.Add(toateCardurile);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
