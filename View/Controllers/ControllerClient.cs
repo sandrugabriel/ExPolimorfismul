@@ -121,7 +121,7 @@ namespace View.Controllers
             
            // List<int> like = clienti[pozIdClient(idClient)].Like;
             List<int> fav = clienti[pozIdClient(idClient)].Favorite;
-
+            if(fav != null)
             for(int i=0;i<fav.Count;i++)
                 if (fav[i] == idDesen) return true;
             return false;
