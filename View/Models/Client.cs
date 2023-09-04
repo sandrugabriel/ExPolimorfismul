@@ -36,30 +36,35 @@ namespace View.Models
             if (prop[3] == "fav")
             {
                 like = null;
-            }else
-            for(int i=3;i<prop.Length; i++)
+            }
+            else if (prop[prop.Length - 1] == "")
             {
-
-                if (prop[i].Equals("fav"))
-                {
-                    semn = 1;
-                }
-                else
+                favorite = null;
+            }
+            else
+                for (int i = 3; i < prop.Length; i++)
                 {
 
-                    if (semn == 0)
+                    if (prop[i].Equals("fav"))
                     {
-                        like.Add(int.Parse(prop[i]));
+                        semn = 1;
                     }
                     else
                     {
-                        favorite.Add(int.Parse(prop[i]));
+
+                        if (semn == 0)
+                        {
+                            like.Add(int.Parse(prop[i]));
+                        }
+                        else
+                        {
+                            favorite.Add(int.Parse(prop[i]));
+                        }
+
                     }
 
+
                 }
-
-
-            }
 
         }
 
