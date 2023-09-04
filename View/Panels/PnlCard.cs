@@ -33,6 +33,7 @@ namespace View.Panels
 
         string path;
         Client client;
+        List<int> list;
         public PnlCard(Form1 form1, DetaliDesen detaliDesen1, Client client1)
         {
             form = form1;
@@ -41,7 +42,7 @@ namespace View.Panels
             controllerDetalii = new ControllerDetalii();
             controllerFigura = new ControllerFigura();
             client = client1;
-
+            list = new List<int>();
             path = Application.StartupPath + @"/data/imagini/";
 
             //PnlCard
@@ -228,23 +229,39 @@ namespace View.Panels
 
             controllerClient.setListLike(client.Id, detaliDesen.Id);
             controllerClient.update();
+
         }
 
         private void pctUnLike_Click(Object sender, EventArgs e)
         {
 
+            this.pctLike.Visible = true;
+            this.pctUnLike.Visible = false;
+
+            controllerClient.setListuNLike(client.Id, detaliDesen.Id);
+            controllerClient.update();
 
         }
-
+        
         private void pctFavorite_Click(Object sender, EventArgs e)
         {
 
+            this.pctFavorite.Visible = false;
+            this.pctUnFav.Visible = true;
 
+            controllerClient.setListfav(client.Id, detaliDesen.Id);
+            controllerClient.update();
+           
         }
 
         private void pctUnFav_Click(Object sender, EventArgs e)
         {
 
+            this.pctFavorite.Visible = true;
+            this.pctUnFav.Visible = false;
+
+            controllerClient.setListuNFav(client.Id, detaliDesen.Id);
+            controllerClient.update();
 
         }
 

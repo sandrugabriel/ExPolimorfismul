@@ -37,10 +37,6 @@ namespace View.Models
             {
                 like = null;
             }
-            else if (prop[prop.Length - 1] == "")
-            {
-                favorite = null;
-            }
             else
                 for (int i = 3; i < prop.Length; i++)
                 {
@@ -79,20 +75,18 @@ namespace View.Models
         public string tosave()
         {
             string t = Id.ToString() + ";" + Name.ToString() + ";" + Password.ToString() + ";";
+            if(like!=null)
             for (int i = 0; i < like.Count; i++)
             {
                     t += like[i].ToString() + ";";
             }
-            t += "fav;";
-            MessageBox.Show(favorite.Count.ToString());
+            t += "fav";
+           // MessageBox.Show(favorite.Count.ToString());
             for (int i = 0; i < favorite.Count; i++)
             {
-                if (i == favorite.Count - 1)
-                    t += favorite[i].ToString();
-                else
-                    t += favorite[i].ToString() + ";";
+                t += ";" + favorite[i].ToString();
             }
-            MessageBox.Show(t);
+           // MessageBox.Show(t);
             return t;
         }
 
