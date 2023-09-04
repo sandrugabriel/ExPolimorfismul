@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,8 @@ namespace View.Panels
         private Bunifu.Framework.UI.BunifuGradientPanel gradientPanel;
 
         private string path;
+
+        PnlToateCardurile toateCardurile;
 
         public PnlHome(Form1 form1, Client client1)
         {
@@ -227,8 +230,14 @@ namespace View.Panels
             this.gradientPanel.Name = "gradientPanel";
             this.gradientPanel.Quality = 10;
             this.gradientPanel.Size = new System.Drawing.Size(1479, 97);
-            
 
+            List<DetaliDesen> detaliDesens = controllerDetalii.getDesene();
+            toateCardurile = new PnlToateCardurile(form,detaliDesens,client);
+
+            this.Controls.Add(toateCardurile);
+
+            toateCardurile.Location = new Point(260, 97);
+           // toateCardurile.BackColor = Color.Gray;
         }
 
 

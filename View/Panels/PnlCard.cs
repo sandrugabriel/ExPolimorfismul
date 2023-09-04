@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using View.Controllers;
 using View.Models;
 
@@ -18,6 +19,8 @@ namespace View.Panels
         private System.Windows.Forms.PictureBox pctFavorite;
         private System.Windows.Forms.PictureBox pctLike;
         private System.Windows.Forms.PictureBox pctDesen;
+        private PictureBox pctUnLike;
+        private PictureBox pctUnFav;
         private System.Windows.Forms.Label lblNume;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
@@ -43,7 +46,7 @@ namespace View.Panels
 
             //PnlCard
             this.BackgroundImage = Image.FromFile(path + "gradient1.png");
-            this.ClientSize = new System.Drawing.Size(332, 254);
+            this.Size = new System.Drawing.Size(332, 254);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PnlCard";
@@ -55,12 +58,16 @@ namespace View.Panels
             this.lblNume = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse();
+            this.pctUnFav = new System.Windows.Forms.PictureBox();
+            this.pctUnLike = new System.Windows.Forms.PictureBox();
 
             this.Controls.Add(this.lblNume);
             this.Controls.Add(this.pctDesen);
             this.Controls.Add(this.pctDesign);
             this.Controls.Add(this.pctFavorite);
             this.Controls.Add(this.pctLike);
+            this.Controls.Add(this.pctUnFav);
+            this.Controls.Add(this.pctUnLike);
 
             // pctDesign
             this.pctDesign.Location = new System.Drawing.Point(0, 196);
@@ -69,29 +76,62 @@ namespace View.Panels
 
             // pctFavorite
             this.pctFavorite.BackColor = System.Drawing.Color.Transparent;
-            if (controllerClient.validFav(detaliDesen.Id, client.Id))
-                this.pctFavorite.Image = Image.FromFile(path + "star.png");
-            else
-                this.pctFavorite.Image = Image.FromFile(path + "fav.png");
-        
             this.pctFavorite.Location = new System.Drawing.Point(199, 203);
             this.pctFavorite.Name = "pctFavorite";
             this.pctFavorite.Size = new System.Drawing.Size(56, 48);
             this.pctFavorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-             
+            this.pctFavorite.Image = Image.FromFile(path + "star.png");
+            this.pctFavorite.Click += new EventHandler(pctFavorite_Click);
+
             // pctLike
             this.pctLike.BackColor = System.Drawing.Color.Transparent;
-
-            if (controllerClient.validFav(detaliDesen.Id, client.Id))
-                this.pctLike.Image = Image.FromFile(path + "heart.png");
-            else
-                this.pctLike.Image = Image.FromFile(path + "lik.png");
-
+            this.pctLike.Image = Image.FromFile(path + "heart.png");
             this.pctLike.Location = new System.Drawing.Point(78, 203);
             this.pctLike.Name = "pctLike";
             this.pctLike.Size = new System.Drawing.Size(56, 48);
             this.pctLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-             
+            this.pctLike.Click += new EventHandler(pctLike_Click);
+
+            // pctUnFav
+            this.pctUnFav.BackColor = System.Drawing.Color.Transparent;
+            this.pctUnFav.Location = new System.Drawing.Point(199, 203);
+            this.pctUnFav.Name = "pctUnFav";
+            this.pctUnFav.Size = new System.Drawing.Size(56, 48);
+            this.pctUnFav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctUnFav.Image = Image.FromFile(path + "fav.png");
+            this.pctUnFav.Click += new EventHandler(pctUnFav_Click);
+
+            if (controllerClient.validFav(detaliDesen.Id, client.Id))
+            {
+                this.pctFavorite.Visible = true;
+                this.pctUnFav.Visible = false;
+            }
+            else
+            {
+                this.pctFavorite.Visible = false;
+                this.pctUnFav.Visible = true;
+            }
+
+            // pctUnLike
+            this.pctUnLike.BackColor = System.Drawing.Color.Transparent;
+            this.pctUnLike.Location = new System.Drawing.Point(78, 203);
+            this.pctUnLike.Name = "pctUnLike";
+            this.pctUnLike.Size = new System.Drawing.Size(56, 48);
+            this.pctUnLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctUnLike.Image = Image.FromFile(path + "lik.png");
+            this.pctUnLike.Click += new EventHandler(pctUnLike_Click);
+
+            if (controllerClient.validLike(detaliDesen.Id, client.Id))
+            {
+                this.pctUnLike.Visible = false;
+                this.pctLike.Visible = true;
+            }
+            else
+            {
+                this.pctUnLike.Visible = true;
+                this.pctLike.Visible = false;
+            }
+
             // pctDesen
             this.pctDesen.Location = new System.Drawing.Point(12, 12);
             this.pctDesen.Name = "pctDesen";
@@ -102,11 +142,11 @@ namespace View.Panels
             this.lblNume.BackColor = System.Drawing.Color.Transparent;
             this.lblNume.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNume.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNume.Location = new System.Drawing.Point(86, 157);
+            this.lblNume.Text = detaliDesen.Name;
+            this.lblNume.Location = new System.Drawing.Point(this.Width/2-(lblNume.Width/2), 157);
             this.lblNume.Name = "lblNume";
             this.lblNume.Size = new System.Drawing.Size(156, 27);
             this.lblNume.TabIndex = 14;
-            this.lblNume.Text = detaliDesen.Name;
              
             // bunifuElipse1
             this.bunifuElipse1.ElipseRadius = 40;
@@ -116,7 +156,7 @@ namespace View.Panels
             this.bunifuElipse2.ElipseRadius = 30;
             this.bunifuElipse2.TargetControl = this.pctDesen;
 
-            RedrawShapesInSmallPictureBox();
+            redraw();
         }
 
         private void ResizeCerc(Cerc shape,float scaleX, float scaleY)
@@ -133,6 +173,7 @@ namespace View.Panels
             shape.Punct2.X = Convert.ToInt32(shape.Punct2.X * scaleX);
             shape.Punct2.Y = Convert.ToInt32(shape.Punct2.Y * scaleY);
         }
+
         private void ResizeDrept(Dreptunghi shape, float scaleX, float scaleY)
         {
             shape.Punct1.X = Convert.ToInt32(shape.Punct1.X * scaleX);
@@ -141,7 +182,7 @@ namespace View.Panels
             shape.Height = Convert.ToInt32(shape.Height * scaleY);
         }
 
-        private void RedrawShapesInSmallPictureBox()
+        private void redraw()
         {
 
             float scaleX = (float)pctDesen.Width / (float)1006;
@@ -179,6 +220,33 @@ namespace View.Panels
             pctDesen.Image = bitmap;
         }
 
+        private void pctLike_Click(object sender, EventArgs e)
+        {
+
+            this.pctLike.Visible = false;
+            this.pctUnLike.Visible = true;
+
+            controllerClient.setListLike(client.Id, detaliDesen.Id);
+            controllerClient.update();
+        }
+
+        private void pctUnLike_Click(Object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void pctFavorite_Click(Object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void pctUnFav_Click(Object sender, EventArgs e)
+        {
+
+
+        }
 
     }
 }

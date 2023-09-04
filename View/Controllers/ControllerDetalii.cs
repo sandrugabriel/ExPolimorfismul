@@ -38,6 +38,12 @@ namespace View.Controllers
 
         }
 
+        public void afisare()
+        {
+            for (int i = 0; i < list.Count; i++)
+                MessageBox.Show(list[i].descriere());
+        }
+
         public void save(string text)
         {
 
@@ -70,6 +76,23 @@ namespace View.Controllers
             }
 
             return id;
+        }
+
+        public List<DetaliDesen> getDesene()
+        {
+            return list;
+        }
+
+        public string toSave()
+        {
+            string t = "";
+
+            for(int i=0;i<list.Count; i++)
+            {
+                t += list[i].tosave() + "\n";
+            }
+
+            return t;
         }
 
     }
