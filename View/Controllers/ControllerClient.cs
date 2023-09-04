@@ -15,10 +15,11 @@ namespace View.Controllers
 
         List<Client> clienti;
 
+       // List<int> list;
         public ControllerClient()
         {
             clienti = new List<Client>();
-
+           // list = new List<int>();
             load();
         }
 
@@ -120,8 +121,12 @@ namespace View.Controllers
         {
             
            // List<int> like = clienti[pozIdClient(idClient)].Like;
+
             List<int> fav = clienti[pozIdClient(idClient)].Favorite;
-            if(fav != null)
+            //for (int i = 0; i < fav.Count; i++)
+                //MessageBox.Show(fav[i].ToString());
+
+                if (fav != null)
             for(int i=0;i<fav.Count;i++)
                 if (fav[i] == idDesen) return true;
             return false;
@@ -152,6 +157,41 @@ namespace View.Controllers
             }
 
             clienti[pozIdClient(idClient)].Favorite = fav;
+
+        }
+
+        public void setListuNFav(int idClient, int idDetali)
+        {
+            List<int> list = new List<int>();
+            if (clienti[pozIdClient(idClient)].Favorite != null)
+            {
+                for (int i = 0; i < clienti[pozIdClient(idClient)].Favorite.Count; i++)
+                    list.Add(clienti[pozIdClient(idClient)].Favorite[i]);
+            }
+           
+            list.Add(idDetali);
+
+
+            clienti[pozIdClient(idClient)].Favorite = list;
+
+        }
+
+        public void setListuNLike(int idClient, int idDetali)
+        {
+            List<int> list = new List<int>();
+
+            if (clienti[pozIdClient(idClient)].Like != null)
+            {
+                for (int i = 0; i < clienti[pozIdClient(idClient)].Like.Count; i++)
+                    list.Add(clienti[pozIdClient(idClient)].Like[i]);
+            }
+
+            list.Add(idDetali);
+
+
+
+            clienti[pozIdClient(idClient)].Like = list;
+
         }
 
         public void setListLike(int idClient, int idDetalii)
