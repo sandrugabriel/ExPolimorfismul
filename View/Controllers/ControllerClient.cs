@@ -132,10 +132,64 @@ namespace View.Controllers
 
              List<int> like = clienti[pozIdClient(idClient)].Like;
             //List<int> fav = clienti[pozIdClient(idClient)].Favorite;
-
+            if(like !=null)
             for (int i = 0; i < like.Count; i++)
                 if (like[i] == idDesen) return true;
             return false;
         }
+
+        public void setListfav(int idClient,int idDetalii)
+        {
+            List<int> list = clienti[pozIdClient(idClient)].Favorite;
+            List<int> fav = new List<int>();
+
+            for(int i=0;i< list.Count; i++)
+            {
+                if (list[i] != idDetalii)
+                {
+                    fav.Add(list[i]);
+                }
+            }
+
+            clienti[pozIdClient(idClient)].Favorite = fav;
+        }
+
+        public void setListLike(int idClient, int idDetalii)
+        {
+            List<int> list = clienti[pozIdClient(idClient)].Like;
+            List<int> like = new List<int>();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] != idDetalii)
+                {
+                    like.Add(list[i]);
+                }
+            }
+
+            clienti[pozIdClient(idClient)].Like = like;
+        }
+
+        public string toSave()
+        {
+            string t = "";
+
+            for (int i = 0; i < clienti.Count; i++)
+            {
+                t += clienti[i].tosave() + "\n";
+            }
+
+            return t;
+        }
+
+        public void update()
+        {
+            string path = Application.StartupPath + @"/data/useri.txt";
+            StreamWriter streamWriter = new StreamWriter(path);
+
+            streamWriter.Write(this.toSave());
+            streamWriter.Close();
+        }
+
     }
 }

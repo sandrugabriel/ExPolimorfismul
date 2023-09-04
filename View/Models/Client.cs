@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace View.Models
 {
@@ -32,6 +33,10 @@ namespace View.Models
             this.name = prop[1];
             this.password = prop[2];
             int semn = 0;
+            if (prop[3] == "fav")
+            {
+                like = null;
+            }else
             for(int i=3;i<prop.Length; i++)
             {
 
@@ -65,5 +70,26 @@ namespace View.Models
         public string Password { get => password; set => password = value; }
         public List<int> Like { get => like; set => like = value; }
         public List<int> Favorite { get => favorite; set => favorite = value; }
+
+        public string tosave()
+        {
+            string t = Id.ToString() + ";" + Name.ToString() + ";" + Password.ToString() + ";";
+            for (int i = 0; i < like.Count; i++)
+            {
+                    t += like[i].ToString() + ";";
+            }
+            t += "fav;";
+            MessageBox.Show(favorite.Count.ToString());
+            for (int i = 0; i < favorite.Count; i++)
+            {
+                if (i == favorite.Count - 1)
+                    t += favorite[i].ToString();
+                else
+                    t += favorite[i].ToString() + ";";
+            }
+            MessageBox.Show(t);
+            return t;
+        }
+
     }
 }

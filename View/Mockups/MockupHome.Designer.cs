@@ -45,6 +45,7 @@
             this.txtSearch = new ZBobb.AlphaBlendTextBox();
             this.pctSearch = new System.Windows.Forms.PictureBox();
             this.gradientPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctMeniu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctDesign1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSearch)).BeginInit();
             this.gradientPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -233,12 +235,21 @@
             this.gradientPanel.Size = new System.Drawing.Size(1479, 97);
             this.gradientPanel.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(260, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1207, 640);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // MockupHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1479, 749);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.btnFavorite);
@@ -248,7 +259,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MockupHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MockupHome";
@@ -261,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctSearch)).EndInit();
             this.gradientPanel.ResumeLayout(false);
             this.gradientPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,5 +293,6 @@
         private ZBobb.AlphaBlendTextBox txtSearch;
         private System.Windows.Forms.PictureBox pctSearch;
         private Bunifu.Framework.UI.BunifuGradientPanel gradientPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

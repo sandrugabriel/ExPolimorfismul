@@ -17,8 +17,7 @@ namespace View
         public Form1()
         {
             InitializeComponent();
-            Client client = new Client("1;gabi;gabi1234;9385;fav;9385\r\n");
-            this.Controls.Add(new PnlHome(this,client));
+            this.Controls.Add(new PnlLogin(this));
         }
 
         public void removePnl(string pnl)
