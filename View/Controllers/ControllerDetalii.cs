@@ -83,6 +83,25 @@ namespace View.Controllers
             return list;
         }
 
+        public List<DetaliDesen> getFavo(List<int> idDetali)
+        {
+            List<DetaliDesen> detali = new List<DetaliDesen>();
+
+            for (int i = 0; i < idDetali.Count; i++)
+            {
+                for (int j = 0; j < list.Count; j++)
+                {
+                    if (idDetali[i] == list[j].Id)
+                    {
+                        detali.Add(list[j]);
+                    }
+                }
+            }
+
+           return detali;
+        }
+
+
         public string toSave()
         {
             string t = "";

@@ -231,5 +231,9 @@ namespace View.Controllers
             streamWriter.Close();
         }
 
+        public List<int> getIdFav(int id)
+        {
+            return clienti[pozIdClient(id)].Favorite;
+        }
     }
 }

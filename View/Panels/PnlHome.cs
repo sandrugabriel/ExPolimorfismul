@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -94,7 +95,7 @@ namespace View.Panels
             this.btnAdd.Size = new System.Drawing.Size(375, 120);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "                  Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new EventHandler(btnAdd_Click);
             
             // btnLike
             this.btnLike.FlatAppearance.BorderSize = 0;
@@ -106,8 +107,8 @@ namespace View.Panels
             this.btnLike.Size = new System.Drawing.Size(375, 120);
             this.btnLike.TabIndex = 2;
             this.btnLike.Text = "                  Liked";
-            this.btnLike.UseVisualStyleBackColor = true;
-            
+            this.btnLike.Click += new EventHandler(btnLike_Click);
+
             // btnFavorite
             this.btnFavorite.FlatAppearance.BorderSize = 0;
             this.btnFavorite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -118,7 +119,7 @@ namespace View.Panels
             this.btnFavorite.Size = new System.Drawing.Size(375, 120);
             this.btnFavorite.TabIndex = 2;
             this.btnFavorite.Text = "                       Favorites";
-            this.btnFavorite.UseVisualStyleBackColor = true;
+            this.btnFavorite.Click += new EventHandler(btnFavorite_Click);
 
             // btnHome
             this.btnHome.BackgroundImage = Image.FromFile(path + "gradient.png");
@@ -130,8 +131,8 @@ namespace View.Panels
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(375, 118);
             this.btnHome.Text = "                    Home";
-            this.btnHome.UseVisualStyleBackColor = true;
-             
+            this.btnHome.Click += new EventHandler(btnHome_Click);
+
             // pctMeniu
             this.pctMeniu.BackColor = System.Drawing.SystemColors.Control;
             this.pctMeniu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -239,7 +240,24 @@ namespace View.Panels
             toateCardurile.Location = new Point(260, 97);
            // toateCardurile.BackColor = Color.Gray;
         }
+        public void removePnlHome(string pnl)
+        {
 
+            Control control = null;
+
+            foreach (Control c in this.Controls)
+            {
+
+                if (c.Name.Equals(pnl))
+                {
+                    control = c;
+                }
+
+            }
+
+            this.Controls.Remove(control);
+
+        }
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
@@ -262,6 +280,49 @@ namespace View.Panels
         private void mini_Click(object sender, EventArgs e)
         {
             this.form.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.btnHome.BackgroundImage = Image.FromFile(path + "gradient.png");
+            this.btnFavorite.BackgroundImage = null;
+            this.btnAdd.BackgroundImage = null;
+            this.btnLike.BackgroundImage = null;
+            this.removePnlHome("PnlCards");
+            List<DetaliDesen> detaliDesens = controllerDetalii.getDesene();
+            toateCardurile = new PnlToateCardurile(form, detaliDesens, client);
+            this.Controls.Add(toateCardurile);
+            toateCardurile.Location = new Point(260, 97);
+        }
+
+        private void btnFavorite_Click(object sender, EventArgs e)
+        {
+            this.btnFavorite.BackgroundImage = Image.FromFile(path + "gradient.png");
+            this.btnHome.BackgroundImage = null;
+            this.btnAdd.BackgroundImage = null;
+            this.btnLike.BackgroundImage = null;
+            List<DetaliDesen> detaliDesens = controllerDetalii.getFavo(controllerClient.getIdFav(client.Id));
+            this.removePnlHome("PnlCards");
+            toateCardurile = new PnlToateCardurile(form, detaliDesens, client);
+            toateCardurile.Location = new Point(260, 97);
+            this.Controls.Add(toateCardurile);
+        }
+
+        private void btnLike_Click(object sender, EventArgs e)
+        {
+            this.btnLike.BackgroundImage = Image.FromFile(path + "gradient.png");
+            this.btnFavorite.BackgroundImage = null;
+            this.btnAdd.BackgroundImage = null;
+            this.btnHome.BackgroundImage = null;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.btnAdd.BackgroundImage = Image.FromFile(path + "gradient.png");
+            this.btnFavorite.BackgroundImage = null;
+            this.btnHome.BackgroundImage = null;
+            this.btnLike.BackgroundImage = null;
+
         }
 
     }
