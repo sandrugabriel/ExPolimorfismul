@@ -235,5 +235,10 @@ namespace View.Controllers
         {
             return clienti[pozIdClient(id)].Favorite;
         }
+
+        public List<int> getIdLike(int id)
+        {
+            return clienti[pozIdClient(id)].Like;
+        }
     }
 }
