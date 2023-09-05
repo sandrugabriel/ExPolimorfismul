@@ -24,6 +24,9 @@ namespace View
         ControllerFigura controllerFigura;
         ControllerDetalii controllerDetalii;
         int idClient;
+
+
+
         public MockupAdd()
         {
             InitializeComponent();
@@ -386,8 +389,12 @@ namespace View
 
         private void txtLinie_enter(object sender, EventArgs e)
         {
-            this.txtLinie.ForeColor = Color.Black;
-            this.txtLinie.Text = "";
+            if (txtLinie.Text == "Numele Liniei")
+            {
+                this.txtLinie.ForeColor = SystemColors.Control;
+                this.txtLinie.Text = "";
+            }
+            
            // MessageBox.Show("Asda");
 
         }
@@ -397,15 +404,37 @@ namespace View
             if (txtLinie.Text.Equals(""))
             {
                 this.txtLinie.Text = "Numele Liniei";
-                this.txtLinie.ForeColor = SystemColors.AppWorkspace;
+                this.txtLinie.ForeColor = SystemColors.Control;
+            }
+        }
+
+        private void txtDesen_enter(object sender, EventArgs e)
+        {
+            if (txtDesen.Text == "Numele Desenului")
+            {
+                this.txtDesen.ForeColor = Color.Black;
+                this.txtDesen.Text = "";
+            }
+            // MessageBox.Show("Asda");
+
+        }
+
+        private void txtDesen_Leve(object sender, EventArgs e)
+        {
+            if (txtDesen.Text.Equals(""))
+            {
+                this.txtDesen.Text = "Numele Desenului";
+                this.txtDesen.ForeColor = Color.Black;
             }
         }
 
         private void txtCerc_Enter(object sender, EventArgs e)
         {
-
-            this.txtCerc.ForeColor = Color.Black;
-            this.txtCerc.Text = "";
+            if (txtCerc.Text == "Numele Cercului")
+            {
+                this.txtCerc.ForeColor = SystemColors.Control;
+                this.txtCerc.Text = "";
+            }
         }
 
         private void txtCerc_Leve(object sender, EventArgs e)
@@ -413,25 +442,28 @@ namespace View
             if (txtCerc.Text.Equals(""))
             {
                 this.txtCerc.Text = "Numele Cercului";
-                this.txtCerc.ForeColor = SystemColors.AppWorkspace;
+                this.txtCerc.ForeColor = SystemColors.Control;
             }
 
         }
 
         private void txtDpret_Enter(object sender, EventArgs e)
         {
-
-            this.txtDrept.ForeColor = Color.Black;
-            this.txtDrept.Text = "";
+            if (txtDrept.Text == "Numele Dreptunghiului")
+            {
+                this.txtDrept.ForeColor = SystemColors.Control;
+                this.txtDrept.Text = "";
+            }
+            
         }
 
         private void txtDrpet_Leve(object sender, EventArgs e)
         {
 
-            if (txtCerc.Text.Equals(""))
+            if (txtDrept.Text.Equals(""))
             {
-                this.txtDrept.Text = "Numele Cercului";
-                this.txtDrept.ForeColor = SystemColors.AppWorkspace;
+                this.txtDrept.Text = "Numele Dreptunghiului";
+                this.txtDrept.ForeColor = SystemColors.Control;
             }
         }
 
@@ -475,12 +507,8 @@ namespace View
             }
 
             controllerDetalii.save(detali);
-
+            
         }
 
-        private void txtLinie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

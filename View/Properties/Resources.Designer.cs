@@ -273,6 +273,46 @@ namespace View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gradient__1_4 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (1)4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__1_5 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (1)5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__1_6 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (1)6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__1_7 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (1)7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gradient__2_ {
             get {
                 object obj = ResourceManager.GetObject("gradient (2)", resourceCulture);
@@ -293,6 +333,16 @@ namespace View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gradient__2_2 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (2)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gradient__3_ {
             get {
                 object obj = ResourceManager.GetObject("gradient (3)", resourceCulture);
@@ -306,6 +356,26 @@ namespace View.Properties {
         internal static System.Drawing.Bitmap gradient__3___1_ {
             get {
                 object obj = ResourceManager.GetObject("gradient (3) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__3___1_1 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (3) (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__3___1_2 {
+            get {
+                object obj = ResourceManager.GetObject("gradient (3) (1)2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +406,66 @@ namespace View.Properties {
         internal static System.Drawing.Bitmap gradient__3___4_ {
             get {
                 object obj = ResourceManager.GetObject("gradient (3) (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__4_ {
+            get {
+                object obj = ResourceManager.GetObject("gradient (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__5_ {
+            get {
+                object obj = ResourceManager.GetObject("gradient (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__6_ {
+            get {
+                object obj = ResourceManager.GetObject("gradient (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__7_ {
+            get {
+                object obj = ResourceManager.GetObject("gradient (7)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__8_ {
+            get {
+                object obj = ResourceManager.GetObject("gradient (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient__9_ {
+            get {
+                object obj = ResourceManager.GetObject("gradient (9)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
