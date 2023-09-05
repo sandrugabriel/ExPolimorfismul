@@ -276,6 +276,8 @@ namespace View.Panels
             this.btnFavorite.BackgroundImage = null;
             this.btnHome.BackgroundImage = null;
             this.btnLike.BackgroundImage = null;
+            this.form.removePnl("PnlHome");
+            this.form.Controls.Add(new PnlAdd(form,client));
 
         }
 

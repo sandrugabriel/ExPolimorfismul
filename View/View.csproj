@@ -40,8 +40,12 @@
       <HintPath>..\..\..\..\..\..\Users\gabi2\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Siticone.Desktop.UI">
+      <HintPath>..\..\..\..\..\..\Users\gabi2\Downloads\Siticone.Desktop.UI.2.0.9.0\Siticone.Desktop.UI.2.0.0.9\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -106,6 +110,9 @@
     <Compile Include="Models\Figurile\Punct.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\DetaliDesen.cs" />
+    <Compile Include="Panels\PnlAdd.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panels\PnlCard.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -331,6 +338,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%295.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %281%297.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient %283%29 %281%292.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
