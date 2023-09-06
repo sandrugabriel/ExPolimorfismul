@@ -94,6 +94,8 @@ namespace View.Panels
             this.txtName.Size = new System.Drawing.Size(456, 55);
             this.txtName.TabIndex = 0;
             this.txtName.Text = "Username";
+            this.txtName.Enter += new EventHandler(txtName_Enter);
+            this.txtName.Leave += new EventHandler(txtName_Leave);
 
             // txtPass
             this.txtPass.BackAlpha = 0;
@@ -106,7 +108,9 @@ namespace View.Panels
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(456, 55);
             this.txtPass.Text = "Password";
-            
+            this.txtPass.Enter += new EventHandler(txtPass_Enter);
+            this.txtPass.Leave += new EventHandler(txtPass_Leave);
+
             // txtConfPass
             this.txtConfPass.BackAlpha = 0;
             this.txtConfPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -119,6 +123,8 @@ namespace View.Panels
             this.txtConfPass.Size = new System.Drawing.Size(456, 55);
             this.txtConfPass.TabIndex = 0;
             this.txtConfPass.Text = "Password Confirmation";
+            this.txtConfPass.Enter += new EventHandler(txtConfPass_Enter);
+            this.txtConfPass.Leave += new EventHandler(txtConfPass_Leave);
              
             // pct1
             this.pct1.Location = new System.Drawing.Point(33, 273);
@@ -299,6 +305,70 @@ namespace View.Panels
 
 
         }
+
+        private void txtName_Enter(object sender, EventArgs e)
+        {
+            if (txtName.Text == "Username")
+            {
+                this.txtName.ForeColor = SystemColors.Control;
+                this.txtName.Text = "";
+            }
+
+            // MessageBox.Show("Asda");
+
+        }
+
+        private void txtName_Leave(object sender, EventArgs e)
+        {
+            if (txtName.Text.Equals(""))
+            {
+                this.txtName.Text = "Username";
+                this.txtName.ForeColor = SystemColors.Control;
+            }
+        }
+
+        private void txtPass_Enter(object sender, EventArgs e)
+        {
+            if (txtPass.Text == "Password")
+            {
+                this.txtPass.ForeColor = SystemColors.Control;
+                this.txtPass.Text = "";
+            }
+
+            // MessageBox.Show("Asda");
+
+        }
+
+        private void txtPass_Leave(object sender, EventArgs e)
+        {
+            if (txtPass.Text.Equals(""))
+            {
+                this.txtPass.Text = "Password";
+                this.txtPass.ForeColor = SystemColors.Control;
+            }
+        }
+
+        private void txtConfPass_Enter(object sender, EventArgs e)
+        {
+            if (txtConfPass.Text == "Password Confirmation")
+            {
+                this.txtConfPass.ForeColor = SystemColors.Control;
+                this.txtConfPass.Text = "";
+            }
+
+            // MessageBox.Show("Asda");
+
+        }
+
+        private void txtConfPass_Leave(object sender, EventArgs e)
+        {
+            if (txtConfPass.Text.Equals(""))
+            {
+                this.txtConfPass.Text = "Password Confirmation";
+                this.txtConfPass.ForeColor = SystemColors.Control;
+            }
+        }
+
 
     }
 }
