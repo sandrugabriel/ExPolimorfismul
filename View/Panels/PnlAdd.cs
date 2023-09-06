@@ -128,6 +128,7 @@ namespace View.Panels
 
         private string path;
 
+        private PictureBox back;
         public PnlAdd(Form1 form1, Client client1)
         {
 
@@ -174,6 +175,7 @@ namespace View.Panels
             this.dreptHeigth = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.dreptWidth = new System.Windows.Forms.NumericUpDown();
+            this.back = new PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dreptX = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -259,6 +261,7 @@ namespace View.Panels
             this.Controls.Add(this.grpLinie);
             this.Controls.Add(this.txtDesen);
             this.Controls.Add(this.btnSalvare);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbTranslatare);
             this.Controls.Add(this.comboBox1);
@@ -1586,6 +1589,15 @@ namespace View.Panels
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 
+            //back
+            this.back.BackColor = System.Drawing.Color.Transparent;
+            this.back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.back.Image = Image.FromFile(path + "back1.png");
+            this.back.Location = new System.Drawing.Point(20, 13);
+            this.back.Size = new System.Drawing.Size(31, 29);
+            this.back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back.Click += new System.EventHandler(this.back_Click);
+
             // bunifuElipse10
             this.bunifuElipse10.ElipseRadius = 20;
             this.bunifuElipse10.TargetControl = this.btnSalvare;
@@ -1604,6 +1616,12 @@ namespace View.Panels
             controllerFigura = new ControllerFigura();
             controllerDetalii = new ControllerDetalii();
 
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.form.removePnl("PnlAdd");
+            this.form.Controls.Add(new PnlHome(form,client));
         }
 
         private void btns_Click(object sender, EventArgs e)
